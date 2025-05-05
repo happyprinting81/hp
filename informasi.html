@@ -72,10 +72,7 @@
 
 <body class="index-page">
 
-  <div id="preloader">
-    <div class="spinner"></div>
-    <p class="loading-text">Mohon bersabar, tunggu sebentar ya...</p>
-  </div>
+
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -260,15 +257,17 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-    window.addEventListener('load', function () {
-      const preloader = document.getElementById('preloader');
-      preloader.style.opacity = '0';
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 500); 
-    });
-  </script>
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || 
+       (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || 
+       (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || 
+       (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0))) {
+        return false;
+    }
+  }
+</script>
 
 </body>
 
