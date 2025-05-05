@@ -95,7 +95,9 @@
 </head>
 
 <body class="index-page">
-
+    <div class="spinner"></div>
+    <p class="loading-text">Mohon bersabar, tunggu sebentar ya...</p>
+  </div>
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -2802,6 +2804,15 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+    <script>
+    window.addEventListener('load', function () {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500); 
+    });
+  </script>
 <script>
   document.addEventListener('contextmenu', event => event.preventDefault());
   document.onkeydown = function(e) {
