@@ -1,5 +1,3 @@
-
-
 (function() {
   "use strict";
 
@@ -79,23 +77,18 @@
     selector: '.glightbox'
   });
 
-  /**
-   * Initiate Pure Counter
-   */
+
   new PureCounter();
 
-  /**
-   * Frequently Asked Questions Toggle
-   */
+
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
     faqItem.addEventListener('click', () => {
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
 
-  /**
-   * Init isotope layout and filters
-   */
+
+
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -126,9 +119,8 @@
 
   });
 
-  /**
-   * Init swiper sliders
-   */
+
+
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
@@ -145,9 +137,7 @@
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
+
   window.addEventListener('load', function(e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
@@ -163,9 +153,7 @@
     }
   });
 
-  /**
-   * Navmenu Scrollspy
-   */
+
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
@@ -186,3 +174,24 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+
+
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+  document.onkeydown = function(e) {
+    if (
+      e.keyCode === 123 ||
+      (e.ctrlKey && e.shiftKey && e.keyCode === 'I'.charCodeAt(0)) ||
+      (e.ctrlKey && e.shiftKey && e.keyCode === 'C'.charCodeAt(0)) ||
+      (e.ctrlKey && e.shiftKey && e.keyCode === 'J'.charCodeAt(0)) ||
+      (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0)) ||
+      (e.ctrlKey && e.shiftKey && e.keyCode === 'K'.charCodeAt(0)) ||
+      (e.ctrlKey && e.shiftKey && e.keyCode === 'E'.charCodeAt(0)) ||
+      (e.ctrlKey && e.altKey && e.keyCode === 'I'.charCodeAt(0))
+    ) {
+      return false;
+    }
+  };
